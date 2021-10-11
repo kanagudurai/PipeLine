@@ -1,0 +1,67 @@
+# Xcode
+# Build, test, and archive an Xcode workspace on macOS.
+# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+########################################
+# Build App and test it locally        #
+######################################## 
+- task: Xcode@5
+  inputs:
+    actions: 'clean build test'
+    configuration: '$(configuration)'
+    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+    xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
+    sdk: '$(sdk)'
+    xcWorkspacePath: 'TestApp-iOS/TestApp-iOS.xcodeproj'
+    scheme: '$(scheme)'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 11'
+    publishJUnitResults: true
+
+###############################################
+# Run automated UI Tests on physical devices  #
+###############################################
+- task: Xcode@5
+  inputs:
+    actions: 'build-for-testing'
+    configuration: '$(configuration)'
+    sdk: '$(sdk)'
+    scheme: '$(scheme)'
+    packageApp: false
+    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    configuration: 'Release'
+    sdk: '$(sdk)'
+    scheme: '$(scheme)'
+    packageApp: true
+    exportPath: '$(build.artifactStagingDirectory)/release'
+    signingOption: 'manual'
+    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 11'
+
+- task: AppCenterTest@1
+  inputs:
+    appFile: '$(Build.ArtifactStagingDirectory)/release/TestApp-iOS.ipa'
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'xcuitest'
+    xcUITestBuildDirectory: '$(build.artifactStagingDirectory)/DerivedData/Build/Products/Debug-iphoneos'
+    credentialsOption: 'serviceEndpoint'
+    serverEndpoint: 'MyCompany AppCenter Deployment'
+    appSlug: 'MyCompany/Moments-iOS'
+    devices: 'MyCompany/iphone11'
+    localeOption: 'en_US'
+    skipWaitingForResults: true
+    showDebugOutput: true
