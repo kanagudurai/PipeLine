@@ -20,7 +20,6 @@ steps:
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     sdk: '$(sdk)'
-    xcWorkspacePath: 'TestApp-iOS/TestApp-iOS.xcodeproj'
     scheme: '$(scheme)'
     destinationPlatformOption: 'iOS'
     destinationSimulators: 'iPhone 11'
