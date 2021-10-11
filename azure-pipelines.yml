@@ -20,7 +20,7 @@ steps:
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     sdk: 'iphonesimulator'
     configuration: 'Debug'
-    scheme: '$(scheme)'
+    scheme: 'iOSHelloWorld'
     destinationPlatformOption: 'iOS'
     destinationSimulators: 'iPhone 11'
     publishJUnitResults: true
@@ -33,7 +33,7 @@ steps:
     actions: 'build-for-testing'
     sdk: 'iphonesimulator'
     configuration: 'Debug'
-    scheme: '$(scheme)'
+    scheme: 'iOSHelloWorld'
     packageApp: false
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
@@ -42,7 +42,7 @@ steps:
     actions: 'build'
     sdk: 'iphonesimulator'
     configuration: 'Release'
-    scheme: '$(scheme)'
+    scheme: 'iOSHelloWorld'
     packageApp: true
     exportPath: '$(build.artifactStagingDirectory)/release'
     signingOption: 'manual'
