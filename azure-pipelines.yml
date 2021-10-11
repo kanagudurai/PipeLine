@@ -16,10 +16,10 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'clean build test'
-    configuration: '$(configuration)'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    sdk: '$(sdk)'
+    sdk: 'iphonesimulator'
+    configuration: 'Debug'
     scheme: '$(scheme)'
     destinationPlatformOption: 'iOS'
     destinationSimulators: 'iPhone 11'
@@ -31,8 +31,8 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'build-for-testing'
-    configuration: '$(configuration)'
-    sdk: '$(sdk)'
+    sdk: 'iphonesimulator'
+    configuration: 'Debug'
     scheme: '$(scheme)'
     packageApp: false
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
@@ -40,8 +40,8 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'build'
+    sdk: 'iphonesimulator'
     configuration: 'Release'
-    sdk: '$(sdk)'
     scheme: '$(scheme)'
     packageApp: true
     exportPath: '$(build.artifactStagingDirectory)/release'
