@@ -39,6 +39,7 @@ steps:
 
 
 
+- task: Xcode@5
  displayName: 'Test the Test project'
   inputs:
     actions: 'test'
