@@ -46,9 +46,6 @@ steps:
     sdk: 'iphonesimulator'
     configuration: 'Debug'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    destinationSimulators: 'iPhone X'
-    destinationTypeOption: 'simulators'
-    destinationPlatformOption: 'iOS'
     signingOption: "auto"
     args: '-UseModernBuildSystem=YES'
     useXcpretty: true
