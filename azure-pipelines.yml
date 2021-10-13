@@ -15,7 +15,7 @@ steps:
 ######################################## 
 - task: Xcode@5
   inputs:
-    actions: 'clean build test'
+    actions: 'clean build'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
     sdk: 'iphonesimulator'
