@@ -22,7 +22,7 @@ steps:
     configuration: 'Debug'
     scheme: 'iOSHelloWorld'
     destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 11'
+    destinationSimulators: 'default'
     publishJUnitResults: true
 
 ###############################################
@@ -37,19 +37,19 @@ steps:
     packageApp: false
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
-- task: Xcode@5
-  inputs:
-    actions: 'build'
-    sdk: 'iphonesimulator'
-    configuration: 'Release'
-    scheme: 'iOSHelloWorld'
-    packageApp: true
-    exportPath: '$(build.artifactStagingDirectory)/release'
-    signingOption: 'manual'
-    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-    provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-    destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 11'
+# - task: Xcode@5
+#   inputs:
+#     actions: 'build'
+#     sdk: 'iphonesimulator'
+#     configuration: 'Release'
+#     scheme: 'iOSHelloWorld'
+#     packageApp: true
+#     exportPath: '$(build.artifactStagingDirectory)/release'
+#     signingOption: 'manual'
+#     signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+#     provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+#     destinationPlatformOption: 'iOS'
+#     destinationSimulators: 'iPhone 11'
 
 # - task: AppCenterTest@1
 #   inputs:
