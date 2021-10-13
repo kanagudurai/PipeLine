@@ -31,16 +31,16 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'test'
-    configuration:'Debug'
-    sdk:'iphonesimulator'
-    scheme:'iOSHelloWorld'
-    packageApp:false
-    publishJUnitResults:true
-    testRunTitle:'Testing App''
-    useXcpretty:true
-    publishJUnitResults:true
-    packageApp:false
-    args:'-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+    configuration: 'Debug'
+    sdk: 'iphonesimulator'
+    scheme: 'iOSHelloWorld'
+    packageApp: false
+    publishJUnitResults: true
+    testRunTitle: 'Testing App''
+    useXcpretty: true
+    publishJUnitResults: true
+    packageApp: false
+    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
 # - task: Xcode@5
 #   inputs:
