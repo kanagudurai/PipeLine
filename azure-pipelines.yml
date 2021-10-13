@@ -42,6 +42,7 @@ steps:
     useXcpretty: true
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
+- task: SonarQubeAnalyze@4
 # - task: Xcode@5
 #   inputs:
 #     actions: 'build'
