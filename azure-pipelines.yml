@@ -27,18 +27,20 @@ steps:
 
 ###############################################
 # Run automated UI Tests on physical devices  #
-###############################################
+###############################################    
 - task: Xcode@5
   inputs:
-    actions: 'build-for-testing'
-    sdk: 'iphonesimulator'
-    configuration: 'Debug'
-    scheme: 'iOSHelloWorld'
-    useXcpretty: true
-    publishJUnitResults: true
-    packageApp: false
-    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
-
+    actions: 'test'
+    configuration:'Debug'
+    sdk:'iphonesimulator'
+    scheme:'iOSHelloWorld'
+    packageApp:false
+    publishJUnitResults:true
+    testRunTitle:'Testing App''
+    useXcpretty:true
+    publishJUnitResults:true
+    packageApp:false
+    args:'-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
 # - task: Xcode@5
 #   inputs:
