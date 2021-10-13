@@ -22,7 +22,7 @@ steps:
     configuration: 'Debug'
     scheme: 'iOSHelloWorld'
     destinationPlatformOption: 'iOS'
-    destinationSimulators: 'default'
+    destinationSimulators: 'iPhone 8'
     publishJUnitResults: true
 
 ###############################################
