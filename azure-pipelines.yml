@@ -33,7 +33,7 @@ steps:
     actions: 'test'
     configuration: 'Debug'
     sdk: 'iphonesimulator'
-    scheme: 'iOSHelloWorld'
+    scheme: 'iOSHelloWorldTests'
     packageApp: false
     publishJUnitResults: true
     testRunTitle: 'Testing App'
