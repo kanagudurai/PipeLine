@@ -33,7 +33,9 @@ steps:
     actions: 'test'
     configuration: 'Debug'
     sdk: 'iphonesimulator'
-    scheme: 'iOSHelloWorldTests'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 8'
+    scheme: 'iOSHelloWorld'
     packageApp: false
     publishJUnitResults: true
     testRunTitle: 'Testing App'
