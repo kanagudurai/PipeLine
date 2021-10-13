@@ -39,7 +39,6 @@ steps:
     testRunTitle: 'Testing App'
     useXcpretty: true
     publishJUnitResults: true
-    packageApp: false
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
 # - task: Xcode@5
