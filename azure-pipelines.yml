@@ -41,7 +41,12 @@ steps:
     testRunTitle: 'Testing App'
     useXcpretty: true
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
-
+    
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage report'
+  inputs:
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 # - task: SonarQubePrepare@4
 #   inputs:
 #     SonarQube: iOSHelloWorld
