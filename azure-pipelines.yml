@@ -22,7 +22,7 @@ steps:
     configuration: 'Debug'
     scheme: 'iOSHelloWorld'
     destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
+    destinationSimulators: 'iPhone 8,OS=14.4'
     publishJUnitResults: true
 
 ###############################################
@@ -34,7 +34,7 @@ steps:
     configuration: 'Debug'
     sdk: 'iphonesimulator'
     destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
+    destinationSimulators: 'iPhone 8,OS=14.4'
     scheme: 'iOSHelloWorld'
     packageApp: false
     publishJUnitResults: true
