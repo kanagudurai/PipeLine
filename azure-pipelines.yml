@@ -39,7 +39,7 @@ steps:
     packageApp: false
     publishJUnitResults: true
     testRunTitle: 'Testing App'
-    useXcpretty: true
+    # useXcpretty: true
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
 
 # - task: SonarQubePrepare@4
