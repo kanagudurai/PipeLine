@@ -13,6 +13,11 @@ steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
+- script: |
+    brew install swiftlint
+    gem install slather
+- bash: |
+    ./run-sonar-swift.sh -v  
 - task: Xcode@5
   inputs:
     actions: 'clean build'
@@ -27,18 +32,74 @@ steps:
 
 ###############################################
 # Run automated UI Tests on physical devices  #
-###############################################
+###############################################    
 - task: Xcode@5
   inputs:
-    actions: 'build-for-testing'
-    sdk: 'iphonesimulator'
+    actions: 'test'
     configuration: 'Debug'
+    sdk: 'iphonesimulator'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 8'
     scheme: 'iOSHelloWorld'
-    useXcpretty: true
-    publishJUnitResults: true
     packageApp: false
+    publishJUnitResults: true
+    testRunTitle: 'Testing App'
+    useXcpretty: true
     args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+    
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage report'
+  inputs:
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+  
 
+# - task: SonarQubePrepare@4
+#   inputs:
+#     SonarQube: iOSHelloWorld
+#     scannerMode: 'CLI'
+#     configMode: 'manual'
+#     cliProjectKey: 'iOSHelloWorld'
+#     cliProjectName: 'iOSHelloWorld'
+#     # configFile: 'sonar-project.properties'
+#     cliSources: '.'
+#     extraProperties: |
+#                 sonar.language=swift
+#                 sonar.sources=src
+#                 sonar.swift.simulator=platform=iOS Simulator,name=iPhone 8,OS=14.5
+#                 sonar.swift.project=iOSHelloWorld.xcodeproj
+#                 sonar.swift.appScheme=iOSHelloWorld
+#                 sonar.exclusions= sonar-scanner-cli/conf/sonar-scanner.properties
+#                 sonar.junit.reportsPath=sonar-reports/TEST-report.xml
+              
+#                 sonar.projectVersion=1.0
+#                 sonar.test.inclusions=**/*Test*/**
+#                 sonar.test.inclusions=*.swift
+#                   #sonar.swift.coverage.reportPath=sonar-reports/coverage-swift.xml
+#                 sonar.swift.coverage.reportPaths = $(Build.Repository.LocalPath)/sonarqube-generic-coverage.xml
+                 
+#                  sonar.sourceEncoding=UTF-8
+#                  sonar.junit.reportsPath=sonar-reports/TEST-report.xml
+                 
+#                  sonar.swift.swiftlint.report=sonar-reports/*swiftlint.txt
+#                  sonar.swift.tailor.report=sonar-reports/*tailor.txt
+#                  sonar.c.file.suffixes=-
+#                  sonar.cpp.file.suffixes=-
+#                  sonar.objc.file.suffixes=-
+
+#   env:
+#     NO_PROXY: $(https://sq.corp.hpicloud.net/)
+
+
+# - task: SonarQubeAnalyze@4
+#   continueOnError: true
+
+# - task: SonarQubePublish@4
+  #inputs:
+  #   pollingTimeoutSec: '300'
+
+  env:
+    NO_PROXY: $(https://sq.corp.hpicloud.net/)     
 
 # - task: Xcode@5
 #   inputs:
