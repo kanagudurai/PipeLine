@@ -13,6 +13,11 @@ steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
+- script: |
+    brew install swiftlint
+    gem install slather
+- bash: |
+    ./run-sonar-swift.sh -v  
 - task: Xcode@5
   inputs:
     actions: 'clean build'
@@ -47,6 +52,7 @@ steps:
   inputs:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+  
 
 # - task: SonarQubePrepare@4
 #   inputs:
