@@ -505,21 +505,21 @@ else
 	#if we have version number in properties file, we don't overide numVersion for sonar-runner/sonar-scanner command
 	numVersionSonarRunner='';
 fi
-# SonarQube
-if [ "$sonarscanner" = "on" ]; then
-    echo -n 'Running SonarQube using SonarQube Scanner'
-    if hash /dev/stdout sonar-scanner 2>/dev/null; then
-        runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
-    else
-        echo 'Skipping sonar-scanner (not installed!)'
-    fi
-else
-    echo -n 'Running SonarQube using SonarQube Runner'
-    if hash /dev/stdout sonar-runner 2>/dev/null; then
-	   runCommand /dev/stdout sonar-runner $numVersionSonarRunner
-    else
-	   runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
-    fi
+## SonarQube
+#if [ "$sonarscanner" = "on" ]; then
+#    echo -n 'Running SonarQube using SonarQube Scanner'
+#    if hash /dev/stdout sonar-scanner 2>/dev/null; then
+#        runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
+#    else
+#        echo 'Skipping sonar-scanner (not installed!)'
+#    fi
+#else
+#    echo -n 'Running SonarQube using SonarQube Runner'
+#    if hash /dev/stdout sonar-runner 2>/dev/null; then
+#	   runCommand /dev/stdout sonar-runner $numVersionSonarRunner
+#    else
+#	   runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
+#    fi
 fi
 
 # Kill progress indicator
