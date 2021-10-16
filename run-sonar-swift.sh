@@ -520,7 +520,7 @@ fi
 #    else
 #	   runCommand /dev/stdout sonar-scanner $numVersionSonarRunner
 #    fi
-fi
+#fi
 
 # Kill progress indicator
 stopProgress
