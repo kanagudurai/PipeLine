@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='iOSHelloWorldUITests.xctest' tests='3' failures='0'>
+  <testsuite name='iOSHelloWorldTests.iOSHelloWorldTests' tests='2' failures='0'>
+    <testcase classname='iOSHelloWorldTests.iOSHelloWorldTests' name='testExample' time='0.002'/>
+    <testcase classname='iOSHelloWorldTests.iOSHelloWorldTests' name='testPerformanceExample' time='0.271'/>
+  </testsuite>
+  <testsuite name='iOSHelloWorldUITests.iOSHelloWorldUITests' tests='1' failures='0'>
+    <testcase classname='iOSHelloWorldUITests.iOSHelloWorldUITests' name='testExample' time='3.685'/>
+  </testsuite>
+</testsuites>
