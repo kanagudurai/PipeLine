@@ -93,7 +93,6 @@
 				FB1E69205DEAB59CDA1EA1F7 /* Pods-iOSHelloWorld.debug.xcconfig */,
 				B00F40349F3FB35682C6BC78 /* Pods-iOSHelloWorld.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,6 +160,7 @@
 				D24408D11F6873A700D58AC7 /* Sources */,
 				D24408D21F6873A700D58AC7 /* Frameworks */,
 				D24408D31F6873A700D58AC7 /* Resources */,
+				941D843D273529FF00138326 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -281,6 +281,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		941D843D273529FF00138326 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint; then\n    swiftlint autocorrect && swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
 		942FB07A5DFED6AEA8942AA3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
