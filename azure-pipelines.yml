@@ -17,6 +17,7 @@ steps:
   displayName: 'Run swiftlint on pipeline terminal'
   inputs:
     script: './Pods/SwiftLint/swiftlint --config ./.swiftlint.yml --reporter junit'
+  continueOnError: false
 - task: Xcode@5
   inputs:
     actions: 'clean build'
