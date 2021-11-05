@@ -15,9 +15,8 @@ steps:
 ######################################## 
 - script: |
     brew install swiftlint
-    gem install slather
 - bash: |
-    ./run-sonar-swift.sh -v  
+    ./swiftLint.sh -v  
 - task: Xcode@5
   inputs:
     actions: 'clean build'
