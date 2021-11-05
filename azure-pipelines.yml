@@ -13,11 +13,10 @@ steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
-- script: |
-    brew install swiftlint
-    gem install slather
-- bash: |
-    ./run-sonar-swift.sh -v  
+- task: CmdLine@2
+  displayName: 'Run swiftlint on pipeline terminal'
+  inputs:
+    script: '$(build.Repository.LocalPath)/iOSHelloWorld/Pods/SwiftLint/swiftlint --config $(build.Repository.LocalPath)/iOSHelloWorld/.swiftlint.yml --reporter junit'
 - task: Xcode@5
   inputs:
     actions: 'clean build'
