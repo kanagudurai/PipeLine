@@ -16,7 +16,7 @@ steps:
 - task: CmdLine@2
   displayName: 'Run swiftlint on pipeline terminal'
   inputs:
-    script: '$(build.Repository.LocalPath)/iOSHelloWorld/Pods/SwiftLint/swiftlint --config $(build.Repository.LocalPath)/iOSHelloWorld/.swiftlint.yml --reporter junit'
+    script: './Pods/SwiftLint/swiftlint --config ./.swiftlint.yml --reporter junit'
 - task: Xcode@5
   inputs:
     actions: 'clean build'
