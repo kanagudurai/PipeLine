@@ -218,7 +218,8 @@
 				TargetAttributes = {
 					D24408D41F6873A700D58AC7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = Z34X6L4P55;
+						ProvisioningStyle = Manual;
 					};
 					D24408E81F6873A700D58AC7 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -483,10 +484,13 @@
 			baseConfigurationReference = FB1E69205DEAB59CDA1EA1F7 /* Pods-iOSHelloWorld.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Z34X6L4P55;
 				INFOPLIST_FILE = iOSHelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sridhar.testingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FInalDev;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -496,10 +500,13 @@
 			baseConfigurationReference = B00F40349F3FB35682C6BC78 /* Pods-iOSHelloWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Z34X6L4P55;
 				INFOPLIST_FILE = iOSHelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sridhar.testingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = FInalDev;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
