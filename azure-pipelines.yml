@@ -13,10 +13,6 @@ steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
-- task: CmdLine@2
-  displayName: 'Run swiftlint on pipeline terminal'
-  inputs:
-    script: './Pods/SwiftLint/swiftlint --config ./.swiftlint.yml --reporter junit'
 - task: Xcode@5
   inputs:
     actions: 'clean build'
