@@ -16,7 +16,6 @@ steps:
 - task: CocoaPods@0
   inputs:
     forceRepoUpdate: false
-    workingDirectory: 'PipeLine'
 - task: Xcode@5
   inputs:
     actions: 'clean build'
