@@ -1,16 +1,46 @@
 PODS:
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
+  - StandardCyborgFusion (2.1.2)
+  - StandardCyborgNetworking (2.1.2):
+    - PromiseKit (~> 6.0)
+    - PromiseKit/Foundation (~> 6.0)
+    - Zip (~> 1.1)
+  - StandardCyborgUI (1.7.1):
+    - StandardCyborgFusion
   - SwiftLint (0.45.0)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
+  - StandardCyborgFusion
+  - StandardCyborgNetworking
+  - StandardCyborgUI
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - PromiseKit
+    - StandardCyborgFusion
+    - StandardCyborgNetworking
+    - StandardCyborgUI
     - SwiftLint
+    - Zip
 
 SPEC CHECKSUMS:
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  StandardCyborgFusion: c5d03288bd71efe06105dc943bc10d28c0b6fcce
+  StandardCyborgNetworking: 6c68d9d10faa85932d5fbf6441a4e9664a83dd12
+  StandardCyborgUI: ab2fcc42898f4e16e782e2922dab273f97348164
   SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 69a2e554fbf18dd8474a0bbafe74b4f900950244
+PODFILE CHECKSUM: f19323d819e928f8fa0d63d6dd9a7c59dfc9ee27
 
 COCOAPODS: 1.11.2

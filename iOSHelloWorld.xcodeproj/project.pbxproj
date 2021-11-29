@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4340D255EDC82059BEB1ED43 /* Pods_iOSHelloWorld_iOSHelloWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B2841372CD4656AB52243 /* Pods_iOSHelloWorld_iOSHelloWorldUITests.framework */; };
+		6068814786B8ED53047C2260 /* Pods_iOSHelloWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA6762963397CE43F50AE2B /* Pods_iOSHelloWorld.framework */; };
+		94258AF62754DC0C004902D0 /* ScanningControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94258AF52754DC0C004902D0 /* ScanningControllerTests.swift */; };
 		D24408D91F6873A700D58AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24408D81F6873A700D58AC7 /* AppDelegate.swift */; };
 		D24408DB1F6873A700D58AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24408DA1F6873A700D58AC7 /* ViewController.swift */; };
 		D24408DE1F6873A700D58AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24408DC1F6873A700D58AC7 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		D24408E31F6873A700D58AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24408E11F6873A700D58AC7 /* LaunchScreen.storyboard */; };
 		D24408EE1F6873A700D58AC7 /* iOSHelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24408ED1F6873A700D58AC7 /* iOSHelloWorldTests.swift */; };
 		D24408F91F6873A700D58AC7 /* iOSHelloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24408F81F6873A700D58AC7 /* iOSHelloWorldUITests.swift */; };
+		D3BDD26D8005B7EC942786DC /* Pods_iOSHelloWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9000A861F9FFC63B64B0B6EB /* Pods_iOSHelloWorldTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		495B2841372CD4656AB52243 /* Pods_iOSHelloWorld_iOSHelloWorldUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSHelloWorld_iOSHelloWorldUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF71BA583DE6CF7D6780F3E /* Pods-iOSHelloWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorld.release.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorld/Pods-iOSHelloWorld.release.xcconfig"; sourceTree = "<group>"; };
+		7BF1B5B5061C81FEF16F6A49 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorld-iOSHelloWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorld-iOSHelloWorldUITests/Pods-iOSHelloWorld-iOSHelloWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8EA6762963397CE43F50AE2B /* Pods_iOSHelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSHelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9000A861F9FFC63B64B0B6EB /* Pods_iOSHelloWorldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSHelloWorldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94258AF52754DC0C004902D0 /* ScanningControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanningControllerTests.swift; sourceTree = "<group>"; };
+		B055DDF8F204E2C1DB4BEA65 /* Pods-iOSHelloWorldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorldTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorldTests/Pods-iOSHelloWorldTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D24408D51F6873A700D58AC7 /* iOSHelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24408D81F6873A700D58AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D24408DA1F6873A700D58AC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,9 @@
 		D24408F41F6873A700D58AC7 /* iOSHelloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSHelloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24408F81F6873A700D58AC7 /* iOSHelloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSHelloWorldUITests.swift; sourceTree = "<group>"; };
 		D24408FA1F6873A700D58AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF6DAEB8ED77E83EF29A6342 /* Pods-iOSHelloWorldTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorldTests.release.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorldTests/Pods-iOSHelloWorldTests.release.xcconfig"; sourceTree = "<group>"; };
+		E76BD1AE891A464D0C65B261 /* Pods-iOSHelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorld.debug.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorld/Pods-iOSHelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		EF1B72F1E8FDA2C021AFDB03 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHelloWorld-iOSHelloWorldUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSHelloWorld-iOSHelloWorldUITests/Pods-iOSHelloWorld-iOSHelloWorldUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6068814786B8ED53047C2260 /* Pods_iOSHelloWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BDD26D8005B7EC942786DC /* Pods_iOSHelloWorldTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4340D255EDC82059BEB1ED43 /* Pods_iOSHelloWorld_iOSHelloWorldUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4951262B3BF07F6A18DEF060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EA6762963397CE43F50AE2B /* Pods_iOSHelloWorld.framework */,
+				495B2841372CD4656AB52243 /* Pods_iOSHelloWorld_iOSHelloWorldUITests.framework */,
+				9000A861F9FFC63B64B0B6EB /* Pods_iOSHelloWorldTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BCD173930926082A64B21AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E76BD1AE891A464D0C65B261 /* Pods-iOSHelloWorld.debug.xcconfig */,
+				6DF71BA583DE6CF7D6780F3E /* Pods-iOSHelloWorld.release.xcconfig */,
+				7BF1B5B5061C81FEF16F6A49 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.debug.xcconfig */,
+				EF1B72F1E8FDA2C021AFDB03 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.release.xcconfig */,
+				B055DDF8F204E2C1DB4BEA65 /* Pods-iOSHelloWorldTests.debug.xcconfig */,
+				DF6DAEB8ED77E83EF29A6342 /* Pods-iOSHelloWorldTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D24408CC1F6873A700D58AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				D24408EC1F6873A700D58AC7 /* iOSHelloWorldTests */,
 				D24408F71F6873A700D58AC7 /* iOSHelloWorldUITests */,
 				D24408D61F6873A700D58AC7 /* Products */,
+				5BCD173930926082A64B21AA /* Pods */,
+				4951262B3BF07F6A18DEF060 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D24408ED1F6873A700D58AC7 /* iOSHelloWorldTests.swift */,
+				94258AF52754DC0C004902D0 /* ScanningControllerTests.swift */,
 				D24408EF1F6873A700D58AC7 /* Info.plist */,
 			);
 			path = iOSHelloWorldTests;
@@ -132,10 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24408FD1F6873A700D58AC7 /* Build configuration list for PBXNativeTarget "iOSHelloWorld" */;
 			buildPhases = (
+				312F8A8D5E6B60D631DA064A /* [CP] Check Pods Manifest.lock */,
 				D24408D11F6873A700D58AC7 /* Sources */,
 				D24408D21F6873A700D58AC7 /* Frameworks */,
 				D24408D31F6873A700D58AC7 /* Resources */,
 				941D843D273529FF00138326 /* ShellScript */,
+				B8CD6564038B166785A721DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24409001F6873A700D58AC7 /* Build configuration list for PBXNativeTarget "iOSHelloWorldTests" */;
 			buildPhases = (
+				FE76153FD9C5F961EB5B1A63 /* [CP] Check Pods Manifest.lock */,
 				D24408E51F6873A700D58AC7 /* Sources */,
 				D24408E61F6873A700D58AC7 /* Frameworks */,
 				D24408E71F6873A700D58AC7 /* Resources */,
@@ -168,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24409031F6873A700D58AC7 /* Build configuration list for PBXNativeTarget "iOSHelloWorldUITests" */;
 			buildPhases = (
+				F4C8D85F8B8499DD52305A71 /* [CP] Check Pods Manifest.lock */,
 				D24408F01F6873A700D58AC7 /* Sources */,
 				D24408F11F6873A700D58AC7 /* Frameworks */,
 				D24408F21F6873A700D58AC7 /* Resources */,
+				3145F00CDFD4CA4A54A2468A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +305,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		312F8A8D5E6B60D631DA064A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSHelloWorld-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3145F00CDFD4CA4A54A2468A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSHelloWorld-iOSHelloWorldUITests/Pods-iOSHelloWorld-iOSHelloWorldUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${PODS_ROOT}/StandardCyborgFusion/ios/StandardCyborgFusion.framework",
+				"${BUILT_PRODUCTS_DIR}/StandardCyborgNetworking/StandardCyborgNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/StandardCyborgUI/StandardCyborgUI.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgFusion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSHelloWorld-iOSHelloWorldUITests/Pods-iOSHelloWorld-iOSHelloWorldUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		941D843D273529FF00138326 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,6 +370,76 @@
 			shellPath = /bin/sh;
 			shellScript = "\n# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint; then\n    swiftlint autocorrect && swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
+		B8CD6564038B166785A721DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSHelloWorld/Pods-iOSHelloWorld-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${PODS_ROOT}/StandardCyborgFusion/ios/StandardCyborgFusion.framework",
+				"${BUILT_PRODUCTS_DIR}/StandardCyborgNetworking/StandardCyborgNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/StandardCyborgUI/StandardCyborgUI.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgFusion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StandardCyborgUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSHelloWorld/Pods-iOSHelloWorld-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C8D85F8B8499DD52305A71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSHelloWorld-iOSHelloWorldUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE76153FD9C5F961EB5B1A63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSHelloWorldTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -290,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94258AF62754DC0C004902D0 /* ScanningControllerTests.swift in Sources */,
 				D24408EE1F6873A700D58AC7 /* iOSHelloWorldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,12 +601,14 @@
 		};
 		D24408FE1F6873A700D58AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E76BD1AE891A464D0C65B261 /* Pods-iOSHelloWorld.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = Z34X6L4P55;
 				INFOPLIST_FILE = iOSHelloWorld/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sridhar.testingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,12 +619,14 @@
 		};
 		D24408FF1F6873A700D58AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF71BA583DE6CF7D6780F3E /* Pods-iOSHelloWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = Z34X6L4P55;
 				INFOPLIST_FILE = iOSHelloWorld/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sridhar.testingapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -466,10 +637,12 @@
 		};
 		D24409011F6873A700D58AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B055DDF8F204E2C1DB4BEA65 /* Pods-iOSHelloWorldTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOSHelloWorldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,10 +653,12 @@
 		};
 		D24409021F6873A700D58AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6DAEB8ED77E83EF29A6342 /* Pods-iOSHelloWorldTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOSHelloWorldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,9 +669,11 @@
 		};
 		D24409041F6873A700D58AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF1B5B5061C81FEF16F6A49 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iOSHelloWorldUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,9 +684,11 @@
 		};
 		D24409051F6873A700D58AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF1B72F1E8FDA2C021AFDB03 /* Pods-iOSHelloWorld-iOSHelloWorldUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iOSHelloWorldUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.samples.adventworks.iOSHelloWorldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
