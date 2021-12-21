@@ -13,6 +13,9 @@ steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
+- task: CocoaPods@0
+  inputs:
+    forceRepoUpdate: false
 - task: Xcode@5
   inputs:
     actions: 'clean build'
