@@ -6,15 +6,15 @@
 //
 
 import XCTest
-import StandardCyborgFusion
-import StandardCyborgUI
+//import StandardCyborgFusion
+//import StandardCyborgUI
 
 @testable import iOSHelloWorld
 
 class ScanningControllerTests: XCTestCase {
     
     func testInitialView() {
-        ScanningHapticFeedbackEngine.shared.scanningFinished()
+       // ScanningHapticFeedbackEngine.shared.scanningFinished()
     }
 
     override func tearDownWithError() throws {

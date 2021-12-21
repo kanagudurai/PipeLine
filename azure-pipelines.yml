@@ -40,18 +40,45 @@ steps:
     keychain: 'temp'
     
 - task: Xcode@5
+  displayName: 'Running tests'
   inputs:
     actions: 'test'
-    configuration: 'Debug'
     sdk: 'iphonesimulator'
+    configuration: 'Debug'
     destinationPlatformOption: 'iOS'
     destinationSimulators: 'iPhone 8'
-    scheme: 'iOSHelloWorld'
     packageApp: false
-    publishJUnitResults: true
     testRunTitle: 'Testing App'
+    xcWorkspacePath: iOSHelloWorld.xcodeproj
+    scheme: iOSHelloWorld
+    xcodeVersion: 'default'
     useXcpretty: true
-    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+    publishJUnitResults: true
+    #args: '-destination "platform=iOS Simulator,name=iPhone 8"'
+    #args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+    args: '-enableCodeCoverage YES -derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+        
+        #- script: slather
+        #  displayName: 'Run slather'
+        
+- bash: |
+    ./xccov-to-sonarqube-generic.sh $(build.artifactStagingDirectory)/DerivedData/Logs/Test/*.xcresult/ > $(build.artifactStagingDirectory)/DerivedData/sonarqube-generic-coverage.xml
+           
+    #sed -i "s|$(build.artifactStagingDirectory)/|g" test.xml > sonarqube-generic-coverage.xml
+
+#- task: Xcode@5
+#  inputs:
+#    actions: 'test'
+#    configuration: 'Debug'
+#    sdk: 'iphonesimulator'
+#    destinationPlatformOption: 'iOS'
+#    destinationSimulators: 'iPhone 8'
+#    scheme: 'iOSHelloWorld'
+#    packageApp: false
+#    publishJUnitResults: true
+#    testRunTitle: 'Testing App'
+#    useXcpretty: true
+#    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
     
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
