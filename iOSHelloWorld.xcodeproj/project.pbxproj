@@ -76,13 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5BCD173930926082A64B21AA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D24408CC1F6873A700D58AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +83,6 @@
 				D24408EC1F6873A700D58AC7 /* iOSHelloWorldTests */,
 				D24408F71F6873A700D58AC7 /* iOSHelloWorldUITests */,
 				D24408D61F6873A700D58AC7 /* Products */,
-				5BCD173930926082A64B21AA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
