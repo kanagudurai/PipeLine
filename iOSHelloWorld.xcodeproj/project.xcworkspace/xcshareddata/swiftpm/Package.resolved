@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HPArizeScanCleaning",
+        "repositoryURL": "git@github.azc.ext.hp.com:3dp-footwear/d2c-mobile-sdk-cleaning.git",
+        "state": {
+          "branch": null,
+          "revision": "e025af94000e6e5725afb5135cf814ec47c05ebc",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Settle",
+        "repositoryURL": "git@github.azc.ext.hp.com:3dp-footwear/d2c-mobile-sdk-settling.git",
+        "state": {
+          "branch": null,
+          "revision": "5ce3a0cb8983067d39e8e7b22f8ba930f23f8f85",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
