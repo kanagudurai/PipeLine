@@ -37,16 +37,16 @@ steps:
 ###############################################
 # Run automated UI Tests on physical devices  #
 ###############################################    
-- task: InstallAppleProvisioningProfile@1
-  inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'sridhardistributionprofile.mobileprovision'
+# - task: InstallAppleProvisioningProfile@1
+#   inputs:
+#     provisioningProfileLocation: 'secureFiles'
+#     provProfileSecureFile: 'sridhardistributionprofile.mobileprovision'
 
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: 'SridharDistribution.p12'
-    certPwd: '1234'
-    keychain: 'temp'
+# - task: InstallAppleCertificate@2
+#   inputs:
+#     certSecureFile: 'SridharDistribution.p12'
+#     certPwd: '1234'
+#     keychain: 'temp'
     
 - task: Xcode@5
   displayName: 'Running tests'
