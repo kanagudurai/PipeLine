@@ -29,12 +29,11 @@ steps:
     actions: 'clean build'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    sdk: 'iphoneos'
-    # sdk: 'iphonesimulator'
+    sdk: 'iphonesimulator'
     configuration: 'Debug'
     scheme: 'iOSHelloWorld'
-    # destinationPlatformOption: 'iOS'
-    # destinationSimulators: 'iPhone 8'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 8'
     publishJUnitResults: true
 
 ###############################################
@@ -55,11 +54,10 @@ steps:
   displayName: 'Running tests'
   inputs:
     actions: 'test'
-    # sdk: 'iphonesimulator'
+    sdk: 'iphonesimulator'
     configuration: 'Debug'
-    # destinationPlatformOption: 'iOS'
-    # destinationSimulators: 'iPhone 8'
-    destinationDevices: 'Raisas iPad'
+    destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 8'
     packageApp: false
     testRunTitle: 'Testing App'
     xcWorkspacePath: iOSHelloWorld.xcodeproj
