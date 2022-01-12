@@ -29,11 +29,11 @@ steps:
     actions: 'clean build'
     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    sdk: 'iphonesimulator'
+    #sdk: 'iphonesimulator'
     configuration: 'Debug'
     scheme: 'iOSHelloWorld'
-    destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
+    destinationPlatformOption: 'Default' #'iOS'
+    #destinationSimulators: 'iPhone 8'
     publishJUnitResults: true
 
 ###############################################
