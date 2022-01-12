@@ -55,10 +55,11 @@ steps:
   displayName: 'Running tests'
   inputs:
     actions: 'test'
-    sdk: 'iphonesimulator'
+    sdk: 'iphoneos'
+    # sdk: 'iphonesimulator'
     configuration: 'Debug'
-    destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
+    # destinationPlatformOption: 'iOS'
+    # destinationSimulators: 'iPhone 8'
     packageApp: false
     testRunTitle: 'Testing App'
     xcWorkspacePath: iOSHelloWorld.xcodeproj
