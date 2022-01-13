@@ -16,7 +16,9 @@ steps:
 #- task: CocoaPods@0
 #  inputs:
 #    forceRepoUpdate: false
-
+- task: CmdLine@2
+  inputs:
+    script: 'sudo xcode-select -s /Applications/Xcode_12.5.1.app'
 - task: InstallSSHKey@0
   inputs:
     knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
