@@ -8,7 +8,7 @@ trigger:
 
 jobs:
 - job: myJob
-  timeoutInMinutes: 0
+  timeoutInMinutes: '0'
   pool:
     vmImage: 'macos-latest'
 
