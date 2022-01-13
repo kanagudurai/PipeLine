@@ -5,7 +5,9 @@
 
 trigger:
 - master
-
+variables:
+  sdk: "iphoneos"
+  configuration: "Release"
 pool:
   vmImage: 'macos-latest'
 
@@ -39,11 +41,11 @@ stages:
                   actions: 'clean build'
                   exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
                   xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-                  sdk: 'iphonesimulator'
-                  configuration: 'Debug'
+                  configuration: '$(configuration)'
+                  sdk: '$(sdk)'
                   scheme: 'iOSHelloWorld'
-                  destinationPlatformOption: 'iOS'
-                  destinationSimulators: 'iPhone 8'
+                  # destinationPlatformOption: 'iOS'
+                  # destinationSimulators: 'iPhone 8'
                   publishJUnitResults: true
 
               ###############################################
