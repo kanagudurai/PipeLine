@@ -9,11 +9,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-# jobs:
-#   - job: Test
-#    timeoutInMinutes: 10
-
-steps:
 ########################################
 # Build App and test it locally        #
 ######################################## 
@@ -26,6 +21,7 @@ stages:
     displayName: Build and Export with Xcode and Push to Nexus 
     jobs:
       - job: Build_And_Export
+        timeoutInMinutes: 0
         displayName: Build and Export iOS with Xcode
         steps:
               - task: CmdLine@2
@@ -98,3 +94,4 @@ stages:
                   codeCoverageTool: 'cobertura'
                   summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
                 
+
