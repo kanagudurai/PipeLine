@@ -67,9 +67,9 @@ stages:
                 inputs:
                   actions: 'test'
                   configuration: '$(configuration)'
-                  sdk: 'iphonesimulator'
+                  sdk: 'iphoneos'
                   destinationPlatformOption: 'iOS'
-                  destinationSimulators: 'iPhone 8'
+                  #destinationSimulators: 'iPhone 8'
                   packageApp: false
                   testRunTitle: 'Testing App'
                   xcWorkspacePath: iOSHelloWorld.xcodeproj
