@@ -66,10 +66,11 @@ stages:
                 displayName: 'Running tests'
                 inputs:
                   actions: 'test'
-                  configuration: '$(configuration)'
+                  configuration: 'Debug'
                   sdk: 'iphoneos'
-                  destinationPlatformOption: 'iOS'
+                  #destinationPlatformOption: 'iOS'
                   #destinationSimulators: 'iPhone 8'
+                  destinationDevices: 'iPhone'
                   packageApp: false
                   testRunTitle: 'Testing App'
                   xcWorkspacePath: iOSHelloWorld.xcodeproj
