@@ -6,7 +6,11 @@
 trigger:
 - master
 
-pool:
+jobs:
+ -job: myJob
+  timeoutInMinutes: 0
+
+   pool:
   vmImage: 'macos-latest'
 
 steps:
