@@ -6,18 +6,12 @@
 trigger:
 - master
 
-jobs:
-- job: myJob
-  timeoutInMinutes: '0'
-  pool:
-    vmImage: 'macos-latest'
+pool:
+  vmImage: 'macos-latest'
 
 # jobs:
-#  -job: myJob
-#   timeoutInMinutes: 0
-
-#    pool:
-#   vmImage: 'macos-latest'
+#   - job: Test
+#    timeoutInMinutes: 10
 
 steps:
 ########################################
@@ -26,161 +20,81 @@ steps:
 #- task: CocoaPods@0
 #  inputs:
 #    forceRepoUpdate: false
-- task: CmdLine@2
-  inputs:
-    script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
-- task: InstallSSHKey@0
-  inputs:
-    knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
-    sshPublicKey:  'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaKO1nFbxLxqwqUIMJtCjmxT0cm1zeH8MlNHbzN3Jf/wPU2XAE7Yv6L0PZrUFfqWW5/Pc6p9V/4ZxsjafqJTCREx8S/Y8Ff85PMelIc5ovfnqoh2/EVlpHNXwhqbwGYkz4ocN5LPMn71mRQ9AgxPRh787R+chBabv7NTDy5bwUCsfAu9nBtnDLCecZePtNoMWhu7BeoCA35EWM2dmeI5f/uxbgqcKXDzfrma9DI4ZudnjmqI7XBmEW1f2z3C9+/R5p1O1IdLJsRD58hWYI9NVFXJYozo0biXLSUYlSZXiWmLVDeYa0jQXiIMFZfX4C33O5jja32ZqbaFjpTOcR8ES5 kanagu-photon@bgmb130518'
-    sshPassphrase: ''
-    sshKeySecureFile: 'id_rsa'
 
-- task: Xcode@5
-  inputs:
-    actions: 'clean build'
-    exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-    xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-    sdk: 'iphonesimulator'
-    configuration: 'Debug'
-    scheme: 'iOSHelloWorld'
-    destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
-    publishJUnitResults: true
+stages:
+  - stage: Build_Export_And_Publish
+    displayName: Build and Export with Xcode and Push to Nexus 
+    jobs:
+      - job: Build_And_Export
+        displayName: Build and Export iOS with Xcode
+        steps:
+              - task: CmdLine@2
+                inputs:
+                  script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
+              - task: InstallSSHKey@0
+                inputs:
+                  knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
+                  sshPublicKey:  'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaKO1nFbxLxqwqUIMJtCjmxT0cm1zeH8MlNHbzN3Jf/wPU2XAE7Yv6L0PZrUFfqWW5/Pc6p9V/4ZxsjafqJTCREx8S/Y8Ff85PMelIc5ovfnqoh2/EVlpHNXwhqbwGYkz4ocN5LPMn71mRQ9AgxPRh787R+chBabv7NTDy5bwUCsfAu9nBtnDLCecZePtNoMWhu7BeoCA35EWM2dmeI5f/uxbgqcKXDzfrma9DI4ZudnjmqI7XBmEW1f2z3C9+/R5p1O1IdLJsRD58hWYI9NVFXJYozo0biXLSUYlSZXiWmLVDeYa0jQXiIMFZfX4C33O5jja32ZqbaFjpTOcR8ES5 kanagu-photon@bgmb130518'
+                  sshPassphrase: ''
+                  sshKeySecureFile: 'id_rsa'
 
-###############################################
-# Run automated UI Tests on physical devices  #
-###############################################    
-- task: InstallAppleProvisioningProfile@1
-  inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'sridhardistributionprofile.mobileprovision'
+              - task: Xcode@5
+                inputs:
+                  actions: 'clean build'
+                  exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+                  xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
+                  sdk: 'iphonesimulator'
+                  configuration: 'Debug'
+                  scheme: 'iOSHelloWorld'
+                  destinationPlatformOption: 'iOS'
+                  destinationSimulators: 'iPhone 8'
+                  publishJUnitResults: true
 
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: 'SridharDistribution.p12'
-    certPwd: '1234'
-    keychain: 'temp'
-    
-- task: Xcode@5
-  displayName: 'Running tests'
-  inputs:
-    actions: 'test'
-    sdk: 'iphonesimulator'
-    configuration: 'Debug'
-    destinationPlatformOption: 'iOS'
-    destinationSimulators: 'iPhone 8'
-    packageApp: false
-    testRunTitle: 'Testing App'
-    xcWorkspacePath: iOSHelloWorld.xcodeproj
-    scheme: iOSHelloWorld
-    xcodeVersion: 'default'
-    useXcpretty: true
-    publishJUnitResults: true
-    #args: '-destination "platform=iOS Simulator,name=iPhone 8"'
-    #args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
-    args: '-enableCodeCoverage YES -derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
-        
-        #- script: slather
-        #  displayName: 'Run slather'
-        
-- bash: |
-    ./xccov-to-sonarqube-generic.sh $(build.artifactStagingDirectory)/DerivedData/Logs/Test/*.xcresult/ > $(build.artifactStagingDirectory)/DerivedData/sonarqube-generic-coverage.xml
-           
-    #sed -i "s|$(build.artifactStagingDirectory)/|g" test.xml > sonarqube-generic-coverage.xml
+              ###############################################
+              # Run automated UI Tests on physical devices  #
+              ###############################################    
+              - task: InstallAppleProvisioningProfile@1
+                inputs:
+                  provisioningProfileLocation: 'secureFiles'
+                  provProfileSecureFile: 'sridhardistributionprofile.mobileprovision'
 
-#- task: Xcode@5
-#  inputs:
-#    actions: 'test'
-#    configuration: 'Debug'
-#    sdk: 'iphonesimulator'
-#    destinationPlatformOption: 'iOS'
-#    destinationSimulators: 'iPhone 8'
-#    scheme: 'iOSHelloWorld'
-#    packageApp: false
-#    publishJUnitResults: true
-#    testRunTitle: 'Testing App'
-#    useXcpretty: true
-#    args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
-    
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage report'
-  inputs:
-    codeCoverageTool: 'cobertura'
-    summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
-  
+              - task: InstallAppleCertificate@2
+                inputs:
+                  certSecureFile: 'SridharDistribution.p12'
+                  certPwd: '1234'
+                  keychain: 'temp'
+                  
+              - task: Xcode@5
+                displayName: 'Running tests'
+                inputs:
+                  actions: 'test'
+                  sdk: 'iphonesimulator'
+                  configuration: 'Debug'
+                  destinationPlatformOption: 'iOS'
+                  destinationSimulators: 'iPhone 8'
+                  packageApp: false
+                  testRunTitle: 'Testing App'
+                  xcWorkspacePath: iOSHelloWorld.xcodeproj
+                  scheme: iOSHelloWorld
+                  xcodeVersion: 'default'
+                  useXcpretty: true
+                  publishJUnitResults: true
+                  #args: '-destination "platform=iOS Simulator,name=iPhone 8"'
+                  #args: '-derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+                  args: '-enableCodeCoverage YES -derivedDataPath $(build.artifactStagingDirectory)/DerivedData'
+                      
+                      #- script: slather
+                      #  displayName: 'Run slather'
+                      
+              - bash: |
+                  ./xccov-to-sonarqube-generic.sh $(build.artifactStagingDirectory)/DerivedData/Logs/Test/*.xcresult/ > $(build.artifactStagingDirectory)/DerivedData/sonarqube-generic-coverage.xml
+                        
+                  #sed -i "s|$(build.artifactStagingDirectory)/|g" test.xml > sonarqube-generic-coverage.xml
 
-# - task: SonarQubePrepare@4
-#   inputs:
-#     SonarQube: iOSHelloWorld
-#     scannerMode: 'CLI'
-#     configMode: 'manual'
-#     cliProjectKey: 'iOSHelloWorld'
-#     cliProjectName: 'iOSHelloWorld'
-#     # configFile: 'sonar-project.properties'
-#     cliSources: '.'
-#     extraProperties: |
-#                 sonar.language=swift
-#                 sonar.sources=src
-#                 sonar.swift.simulator=platform=iOS Simulator,name=iPhone 8,OS=14.5
-#                 sonar.swift.project=iOSHelloWorld.xcodeproj
-#                 sonar.swift.appScheme=iOSHelloWorld
-#                 sonar.exclusions= sonar-scanner-cli/conf/sonar-scanner.properties
-#                 sonar.junit.reportsPath=sonar-reports/TEST-report.xml
-              
-#                 sonar.projectVersion=1.0
-#                 sonar.test.inclusions=**/*Test*/**
-#                 sonar.test.inclusions=*.swift
-#                   #sonar.swift.coverage.reportPath=sonar-reports/coverage-swift.xml
-#                 sonar.swift.coverage.reportPaths = $(Build.Repository.LocalPath)/sonarqube-generic-coverage.xml
-                 
-#                  sonar.sourceEncoding=UTF-8
-#                  sonar.junit.reportsPath=sonar-reports/TEST-report.xml
-                 
-#                  sonar.swift.swiftlint.report=sonar-reports/*swiftlint.txt
-#                  sonar.swift.tailor.report=sonar-reports/*tailor.txt
-#                  sonar.c.file.suffixes=-
-#                  sonar.cpp.file.suffixes=-
-#                  sonar.objc.file.suffixes=-
-
-#   env:
-#     NO_PROXY: $(https://sq.corp.hpicloud.net/)
-
-
-# - task: SonarQubeAnalyze@4
-#   continueOnError: true
-
-# - task: SonarQubePublish@4
-  #inputs:
-  #   pollingTimeoutSec: '300'
-
-  env:
-    NO_PROXY: $(https://sq.corp.hpicloud.net/)     
-
-# - task: Xcode@5
-#   inputs:
-#     actions: 'build'
-#     sdk: 'iphonesimulator'
-#     configuration: 'Release'
-#     scheme: 'iOSHelloWorld'
-#     packageApp: true
-#     exportPath: '$(build.artifactStagingDirectory)/release'
-#     signingOption: 'manual'
-#     signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-#     provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-#     destinationPlatformOption: 'iOS'
-#     destinationSimulators: 'iPhone 11'
-
-# - task: AppCenterTest@1
-#   inputs:
-#     appFile: '$(Build.ArtifactStagingDirectory)/release/TestApp-iOS.ipa'
-#     artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
-#     frameworkOption: 'xcuitest'
-#     xcUITestBuildDirectory: '$(build.artifactStagingDirectory)/DerivedData/Build/Products/Debug-iphoneos'
-#     credentialsOption: 'serviceEndpoint'
-#     serverEndpoint: 'MyCompany AppCenter Deployment'
-#     appSlug: 'MyCompany/Moments-iOS'
-#     devices: 'MyCompany/iphone11'
-#     localeOption: 'en_US'
-#     skipWaitingForResults: true
-#     showDebugOutput: true
+                  
+              - task: PublishCodeCoverageResults@1
+                displayName: 'Publish code coverage report'
+                inputs:
+                  codeCoverageTool: 'cobertura'
+                  summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+                
