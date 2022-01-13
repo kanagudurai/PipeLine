@@ -36,17 +36,17 @@ stages:
                   sshPassphrase: ''
                   sshKeySecureFile: 'id_rsa'
 
-              - task: Xcode@5
-                inputs:
-                  actions: 'clean build'
-                  exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
-                  xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
-                  configuration: '$(configuration)'
-                  sdk: '$(sdk)'
-                  scheme: 'iOSHelloWorld'
-                  # destinationPlatformOption: 'iOS'
-                  # destinationSimulators: 'iPhone 8'
-                  publishJUnitResults: true
+              # - task: Xcode@5
+              #   inputs:
+              #     actions: 'clean build'
+              #     exportPath: '$(agent.buildDirectory)/output/$(sdk)/$(configuration)'
+              #     xcodeVersion: 'default' # Options: default, 10, 9, 8, specifyPath
+              #     configuration: '$(configuration)'
+              #     sdk: '$(sdk)'
+              #     scheme: 'iOSHelloWorld'
+              #     # destinationPlatformOption: 'iOS'
+              #     # destinationSimulators: 'iPhone 8'
+              #     publishJUnitResults: true
 
               ###############################################
               # Run automated UI Tests on physical devices  #
@@ -66,10 +66,10 @@ stages:
                 displayName: 'Running tests'
                 inputs:
                   actions: 'test'
-                  sdk: 'iphonesimulator'
-                  configuration: 'Debug'
-                  destinationPlatformOption: 'iOS'
-                  destinationSimulators: 'iPhone 8'
+                  configuration: '$(configuration)'
+                  sdk: '$(sdk)'
+                  # destinationPlatformOption: 'iOS'
+                  # destinationSimulators: 'iPhone 8'
                   packageApp: false
                   testRunTitle: 'Testing App'
                   xcWorkspacePath: iOSHelloWorld.xcodeproj
