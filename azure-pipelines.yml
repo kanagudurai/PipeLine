@@ -18,7 +18,7 @@ steps:
 #    forceRepoUpdate: false
 - task: CmdLine@2
   inputs:
-    script: 'sudo xcode-select -s /Applications/Xcode_14.0.app'
+    script: 'sudo xcode-select -s /Applications/Xcode_13.5.app'
 - task: InstallSSHKey@0
   inputs:
     knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
