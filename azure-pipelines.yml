@@ -33,7 +33,7 @@ stages:
               # - task: CmdLine@2
               #   inputs:
               #     script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
-                - ${{ each xv in parameters.xcode_versions }}:
+        - ${{ each xv in parameters.xcode_versions }}:
         - script: |
             sudo xcode-select -s /Applications/${{ xv }}.app
             displayName: Selects a specific version of Xcode
