@@ -9,10 +9,10 @@ variables:
   sdk: "iphoneos"
   configuration: "Release"
 
-pool: "CodeWayMac11-12.5.1"
+# pool: "CodeWayMac11-12.5.1"
   
-# pool:
-#   vmImage: 'macos-latest'
+pool:
+  vmImage: 'macos-latest'
 
 ########################################
 # Build App and test it locally        #
@@ -29,9 +29,12 @@ stages:
         timeoutInMinutes: 0
         displayName: Build and Export iOS with Xcode
         steps:
+              # - task: CmdLine@2
+              #   inputs:
+              #     script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
               - task: CmdLine@2
                 inputs:
-                  script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
+                  script: 'sudo chmod 600 ~/.ssh/config'
               - task: InstallSSHKey@0
                 inputs:
                   knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
