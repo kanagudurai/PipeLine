@@ -26,9 +26,16 @@ stages:
         timeoutInMinutes: 0
         displayName: Build and Export iOS with Xcode
         steps:
-              - task: CmdLine@2
-                inputs:
-                  script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
+              # - task: CmdLine@2
+              #   inputs:
+              #     script: 'sudo xcode-select -s /Applications/Xcode_13.2.app'
+                - ${{ each xv in parameters.xcode_versions }}:
+        - script: |
+            sudo xcode-select -s /Applications/${{ xv }}.app
+            displayName: Selects a specific version of Xcode
+            - script: |
+            sudo xcode-select -p
+            displayName: Displays the current version of Xcode
               - task: InstallSSHKey@0
                 inputs:
                   knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
