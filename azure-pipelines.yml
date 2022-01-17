@@ -8,9 +8,11 @@ trigger:
 variables:
   sdk: "iphoneos"
   configuration: "Release"
+
+pool: "CodeWayMac11-12.5.1"
   
-pool:
-  vmImage: 'macos-latest'
+# pool:
+#   vmImage: 'macos-latest'
 
 ########################################
 # Build App and test it locally        #
