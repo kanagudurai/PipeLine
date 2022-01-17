@@ -8,6 +8,10 @@ trigger:
 variables:
   sdk: "iphoneos"
   configuration: "Release"
+parameters:
+- name: 'xcode_versions'
+  type: object
+  
 pool:
   vmImage: 'macos-latest'
 
