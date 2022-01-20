@@ -36,7 +36,7 @@ stages:
               - task: InstallSSHKey@0
                 inputs:
                   knownHostsEntry: 'github.azc.ext.hp.com,44.239.89.60 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDbp+q+E45DWcJbOKhEOwFQ+jrcAr+joBqY7qbI24Gzfrzl73AEBjEZtKA4DenRJVV8paZkUVqT59HxmdoKvnmA='
-                  sshPublicKey:  '$(myPubKey)' #'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaKO1nFbxLxqwqUIMJtCjmxT0cm1zeH8MlNHbzN3Jf/wPU2XAE7Yv6L0PZrUFfqWW5/Pc6p9V/4ZxsjafqJTCREx8S/Y8Ff85PMelIc5ovfnqoh2/EVlpHNXwhqbwGYkz4ocN5LPMn71mRQ9AgxPRh787R+chBabv7NTDy5bwUCsfAu9nBtnDLCecZePtNoMWhu7BeoCA35EWM2dmeI5f/uxbgqcKXDzfrma9DI4ZudnjmqI7XBmEW1f2z3C9+/R5p1O1IdLJsRD58hWYI9NVFXJYozo0biXLSUYlSZXiWmLVDeYa0jQXiIMFZfX4C33O5jja32ZqbaFjpTOcR8ES5 kanagu-photon@bgmb130518'
+                  sshPublicKey:  'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaKO1nFbxLxqwqUIMJtCjmxT0cm1zeH8MlNHbzN3Jf/wPU2XAE7Yv6L0PZrUFfqWW5/Pc6p9V/4ZxsjafqJTCREx8S/Y8Ff85PMelIc5ovfnqoh2/EVlpHNXwhqbwGYkz4ocN5LPMn71mRQ9AgxPRh787R+chBabv7NTDy5bwUCsfAu9nBtnDLCecZePtNoMWhu7BeoCA35EWM2dmeI5f/uxbgqcKXDzfrma9DI4ZudnjmqI7XBmEW1f2z3C9+/R5p1O1IdLJsRD58hWYI9NVFXJYozo0biXLSUYlSZXiWmLVDeYa0jQXiIMFZfX4C33O5jja32ZqbaFjpTOcR8ES5 kanagu-photon@bgmb130518'
                   sshPassphrase: ''
                   sshKeySecureFile: 'id_rsa'
 
