@@ -72,8 +72,9 @@ stages:
                   actions: 'test'
                   configuration: 'Debug'
                   sdk: 'iphoneos'
-                  #destinationPlatformOption: 'iOS'
+                  destinationPlatformOption: 'iOS'
                   #destinationSimulators: 'iPhone 8'
+                  destinationTypeOption: 'devices'
                   destinationDevices: 'Raisa’s iPad'
                   packageApp: false
                   testRunTitle: 'Testing App'
