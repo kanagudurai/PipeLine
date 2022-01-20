@@ -74,7 +74,7 @@ stages:
                   sdk: 'iphoneos'
                   #destinationPlatformOption: 'iOS'
                   #destinationSimulators: 'iPhone 8'
-                  destinationDevices: 'iPhone'
+                  destinationDevices: 'Raisa’s iPad'
                   packageApp: false
                   testRunTitle: 'Testing App'
                   xcWorkspacePath: iOSHelloWorld.xcodeproj
